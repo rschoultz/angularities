@@ -62,18 +62,18 @@ allprojects {
     }
 }
 
-project(":persistence") {
+project(":persistence2") {
     dependencies {
         compile "org.springframework.boot:spring-boot-starter-data-jpa:1.1.6.RELEASE"
 
-        testCompile project(":webapp")
+        testCompile project(":webapp2")
     }
 }
 
-project(":webapp") {
+project(":webapp2") {
 
     dependencies {
-        compile project(":persistence")
+        compile project(":persistence2")
         compile "org.springframework.boot:spring-boot-starter-web:1.1.6.RELEASE"
     }
 }

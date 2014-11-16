@@ -1,2 +1,2 @@
-include ':persistence'
-include ':webapp'
+include ':persistence2'
+include ':webapp2'
