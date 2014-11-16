@@ -41,7 +41,8 @@ project(":persistence2") {
 }
 
 project(":webapp2") {
-
+	apply plugin: "spring-boot"
+	
     dependencies {
         compile project(":persistence2")
         compile "org.springframework.boot:spring-boot-starter-web:1.1.6.RELEASE"
@@ -49,5 +50,5 @@ project(":webapp2") {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2'
+    gradleVersion = '1.11'
 }
