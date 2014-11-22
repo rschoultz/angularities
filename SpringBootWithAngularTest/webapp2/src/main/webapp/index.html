@@ -3,6 +3,11 @@
 <html ng-app="springFun">
 
 <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
@@ -12,6 +17,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.4/angular-route.min.js"></script>
     <script src="js/application.js"></script>
     <script src="js/controllers.js"></script>
+    
+	<meta name="_csrf" content="${_csrf.token}"/>
+	<!-- default header name is X-CSRF-TOKEN -->
+	<meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+	<script type="text/javascript">
+    $(document).ready(function () {
+      $('#download').click(function(){                
+        var params = $('#params_').clone();
+        var csrftoken = $("#csrftoken_").clone();
+        $('<form target="_blank" action="report" method="post"></form>')
+                .append(params)
+                .append(csrftoken)
+                .appendTo('body')
+                .submit()
+                .remove();
+
+      });
+    });
+</script>
 </head>
 
 <body>

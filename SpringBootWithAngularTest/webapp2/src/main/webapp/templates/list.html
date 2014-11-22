@@ -1,3 +1,5 @@
+
+
 <div class="container" ng-controller="MessagesController">
 
     <div class="row col-md-12">
@@ -18,7 +20,10 @@
                         <textarea class="form-control" id="body" placeholder="Message body"
                                   rows="3" style="resize: none" required ng-model="message.body"></textarea>
                     </div>
+				    <input type='hidden' id='params_' name='params' value='${params}' />
+				    <input type="hidden" id="csrftoken_" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
                     <a class="btn btn-default" ng-click="sendMessage()">Send message</a>
+
                 </form>
             </div>
         </div>
@@ -60,3 +65,5 @@
         </table>
     </div>
 </div>
+
+
